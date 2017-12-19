@@ -1,0 +1,16 @@
+功能：封装了Springboot和Mybatis的第三方框架
+
+使用方法：
+Maven: setting.xml
+ <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>admin123</password>
+  </server>
+
+  pom.xml
+    <dependency>
+      <groupId>com.springboot.ping</groupId>
+      <artifactId>springboot-ping-mybatis-starter</artifactId>
+      <version>1.0-SNAPSHOT</version>
+	</dependency>
