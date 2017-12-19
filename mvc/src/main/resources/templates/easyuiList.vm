@@ -1,0 +1,52 @@
+<script type="text/javascript"> 
+/**
+参数定义:
+module:实体所在的模块
+entity:实体类简称
+pageId:主要用于设定dom里的id唯一值
+singleSelect:是否单选,true或者false
+remoteSort:是否支持数据库排序,true或者false
+multiSort:是否支持多字段排序排序,true或者false
+searchHtml:查询条件的html代码
+toolbarHtml:操作button的html代码
+title:table的标题
+fieldHtml:table的表头的html代码
+*/
+$(function(){
+    $("#${pageId}_dg").datagrid({
+	    	singleSelect:${singleSelect},
+	    	remoteSort:${remoteSort},
+	    	multiSort:${multiSort},
+	    	pagination:true,
+	    	toolbar:"#${pageId}_tb",
+	    	width:$("#tabs").tabs("getSelected").width()-20,
+	    	height:375,
+	    	url:"generic/queryPage.action?entity=${entity}",
+	    	method:"post",
+	    	queryParams: getFormParams("${pageId}_searchform"),
+	    	onLoadError:function(){
+	    		easyAlert("加载错误！请刷新页面或者重新登录！");
+	    	},
+	        onLoadSuccess:function(data){
+	        	resizeReloadDg();
+	        }
+	});
+});
+</script>
+<div id="${pageId}_list">
+	<div style="margin-bottom:0px">
+	   	<form id="${pageId}_searchform" style="margin-bottom:0px">
+	   		${searchHtml}
+		</form>
+	</div>
+	<div id="${pageId}_tb">
+		${toolbarHtml}
+	</div>
+<table id="${pageId}_dg" class="auto-datagrid" title="${title}" style="width:700px;height:250px">
+        <thead>
+            <tr>
+                ${fieldHtml}
+            </tr>
+        </thead>
+    </table>
+</div>

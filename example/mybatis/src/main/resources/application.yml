@@ -1,0 +1,42 @@
+spring.datasource:
+  continue-on-error: false # Do not stop if an error occurs while initializing the database.
+  #data:  # Data (DML) script resource reference.
+  initialize: false # Populate the database using 'data.sql'.
+  jmx-enabled: false # Enable JMX support (if provided by the underlying pool).
+  #jndi-name:  # JNDI location of the datasource. Class, url, username & password are ignored when set.
+  max-active: 100
+  max-idle: 8
+  #max-wait:
+  #min-evictable-idle-time-millis:
+  min-idle: 8
+  name: dataSource # Name of the datasource.
+  #platform: all # Platform to use in the schema resource (schema-${platform}.sql).
+  #schema:  # Schema (DDL) script resource reference.
+  #separator: ; # Statement separator in SQL initialization scripts.
+  #sql-script-encoding:  # SQL scripts encoding.
+  #test-on-borrow:  # For instance `false`
+  #test-on-return:  # For instance `false`
+  test-while-idle: true
+  time-between-eviction-runs-millis: 1
+  validation-query: 'SELECT 1'
+  type: 'com.zaxxer.hikari.HikariDataSource'
+  driver-class-name: 'com.mysql.jdbc.Driver'
+  url: 'jdbc:mysql://localhost:3306/test_db?useUnicode=true&characterEncoding=utf-8'
+  username: root
+  password: 123456
+
+mybatis:
+  #configLocation: classpath:mybatis-config.xml # MyBatis xml config file (optional)
+  #mapperLocations: classpath:mapper/*.xml,classpath:mapper/*/*.xml # Mapper xml config files (optional)
+  #basePackages: com.yirendai.jfsk.mp
+---
+spring:
+  profiles: default
+
+---
+spring:
+  profiles: env_production
+
+---
+spring:
+  profiles: env_development

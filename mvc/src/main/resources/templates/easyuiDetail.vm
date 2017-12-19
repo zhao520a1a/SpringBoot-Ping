@@ -1,0 +1,15 @@
+<head>
+<style type="text/css">
+ .detail-table .even{
+  font-size: 12px;
+  font-weight: bold;
+  font-family:微软雅黑;
+  color: #404040;
+  height: 16px;
+  line-height: 16px;
+}
+</style>
+</head>
+<div>
+	${details}
+</div>
