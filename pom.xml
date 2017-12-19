@@ -16,24 +16,7 @@
 		<module>generic-controller</module>
 		<module>swagger</module>
 	</modules>
-	<!--<repositories>-->
-	  	<!--<repository>-->
-	  		<!--<id>nexus</id>-->
-	  		<!--<url>http://10.141.5.93:8081/repository/maven-public/</url>-->
-	  	<!--</repository>-->
-  	<!--</repositories>-->
-  	<!--<distributionManagement>-->
-        <!--<snapshotRepository>-->
-            <!--<id>snapshot</id>-->
-            <!--<name>Nexus Snapshot</name>-->
-            <!--<url>http://10.141.5.93:8081/repository/maven-snapshots/</url>-->
-        <!--</snapshotRepository>-->
-	    <!--<repository>-->
-	      <!--<id>releases</id>-->
-	      <!--<name>Releases</name>-->
-	      <!--<url>http://10.141.5.93:8081/repository/maven-releases</url>-->
-	    <!--</repository>-->
-    <!--</distributionManagement>-->
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
